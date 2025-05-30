@@ -1,0 +1,174 @@
+/* Only the art plus buttons */
+
+.artPiece {
+    margin-top: 5rem;
+}
+
+.artPiece:first-child {
+    margin-top: 3rem;
+}
+
+.artPiece:last-child {
+    margin-bottom: 5rem;
+}
+
+.art {
+    width: 51vw;
+    height: 34vw;
+    margin: 2rem auto 0 auto;
+    position: relative;
+}
+
+.artPiece h2 {
+    font-size: 1.5rem;;
+}
+
+.picture, 
+.info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 400ms ease-in-out;
+}
+
+.picture {
+    object-fit: cover;
+}
+
+.slideHidden {
+    opacity: 0;
+}
+
+.slideButton {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: rgba(5, 8, 10, 0.2);
+    border: none;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.art i {
+    font-size: 2rem;
+    color: var(--bg-color);
+    opacity: 0.6;
+}
+
+.slideButton:hover i{
+    opacity: 0.9;
+}
+
+.slideButton:hover{
+    background-color: rgba(5, 8, 10, 0.5);
+}
+
+.slideBack {
+    left: 0.5rem;
+}
+
+.slideForward {
+    right: 0.5rem;
+}
+
+.indicators {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 4rem;
+    height: 0.9rem;
+    padding: 0 0.3rem;
+    background-color: rgba(5, 8, 10, 0.3);
+    border-radius: 10% / 50%;
+}
+
+.indicator {
+    background-color: var(--bg-color);
+    opacity: 0.4;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    border: none;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.indicatorActive {
+    opacity: 0.9;
+}
+/* other infos */
+
+h2 {
+    text-align: center;
+}
+
+/* art info slide */
+.info {
+    height: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notForSale {
+    justify-content: space-around !important;
+}
+
+.text {
+    height: calc(35% - 2rem);
+    width: calc(100% - 2rem);
+    background-color: rgba(204, 186, 184, 0.5);
+    border-radius: 2% / 10%;
+    padding: 1rem;
+}
+
+.data {
+    width: calc(100% - 9rem);
+    display: flex;
+    height: 40%;
+    justify-content: space-between;
+}
+
+.dataBit {
+    width: calc(30% - 2rem);
+    background-color: rgba(212, 144, 126, 0.5);
+    border-radius: 5%;
+    padding: 1rem;
+}
+
+.dataBit:nth-child(2),
+.dataBit:nth-child(3) {
+    border-left: none;
+}
+
+.dataBitTitle {
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.offer {
+    height: 10%;
+    width: 100%;
+    background-color: rgba(135, 161, 197, 0.5);
+    color: var(--text-color);
+    border-radius: 1% / 10%;
+}
+
+.offer:hover {
+    background-color: rgba(135, 161, 197, 0.7);
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: inset 0 0 5px rgba(5, 8, 10, 0.1);
+}
