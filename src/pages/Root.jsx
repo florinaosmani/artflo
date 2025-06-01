@@ -56,9 +56,19 @@ function Root () {
                 onClick={toggleLanguage}>
                     { lang ? 'EN' : 'DE' }
                 </button>
-                <h1>
-                    ArtFlo
-                </h1>
+                <div className={classes.title}>
+                    <div className={classes.titleDeco}>
+                        <div className={`${classes.light} ${classes.banner}`}>
+                        </div>
+                        <div className={`${classes.medium} ${classes.banner}`}>
+                        </div>
+                        <div className={`${classes.dark} ${classes.banner}`}>
+                        </div>
+                    </div>
+                    <h1>
+                        ArtFlo
+                    </h1>
+                </div>
             </header>
             <main className={classes.main}>
                 <Outlet />

@@ -1,56 +1,59 @@
 /* images are 3:2, 3 width 2 height */
 
-import image1 from './images/image.jpg';
-import image2 from './images/image2.jpg';
-import image3 from './images/image3.jpg';
-import image4 from './images/image4.jpg';
+import lilguy1 from '../resources/images/lilguy/lilguy1.jpg';
+import lilguy2 from '../resources/images/lilguy/lilguy2.jpg';
+import lilguy3 from '../resources/images/lilguy/lilguy3.jpg';
+import lilguy4 from '../resources/images/lilguy/lilguy4.jpg';
+
+import donewaiting1 from '../resources/images/donewaiting/donewaiting1.jpg';
+import donewaiting2 from '../resources/images/donewaiting/donewaiting2.jpg';
+import donewaiting3 from '../resources/images/donewaiting/donewaiting3.jpg';
+import donewaiting4 from '../resources/images/donewaiting/donewaiting4.jpg';
 
 export const artData = [
     {
         forSale: true,
         className: 'hey',
         title: {
-            en: 'Title of the Art Piece',
-            de: 'Titel des Kunstwerks'
+            en: 'Boy in Cropped Yellow Sweater',
+            de: 'Junge im kurzen, gelben Pullover'
         },
         pictures: [
             [
-                image1,
-                {en: 'alttext',
-                de: 'alternativtext'}
+                lilguy1,
+                {en: 'Painting of a boy in a cropped yellow sweater and blue jeans',
+                de: 'Gemälde eines Jungen in einem kurzen, gelben Pullover und blauen Jeans'}
             ],
             [
-                image2,
-                {en: 'alttext',
-                de: 'alternativtext'}
+                lilguy2,
+                {en: 'Detail of the painting',
+                de: 'Detail des Gemäldes'}
             ],
             [
-                image3,
-                {en: 'alttext',
-                de: 'alternativtext'}
+                lilguy3,
+                {en: 'Detail of the painting',
+                de: 'Detail des Gemäldes'}
             ],
             [
-                image4,
-                {en: 'alttext',
-                de: 'alternativtext'}
+                lilguy4,
+                {en: 'Boy in cropped yellow sweater hanging on a wall',
+                de: 'Junge im kurzen, gelben Pullover an einer Wand'}
             ],
         ],
         text: {
-            en: 'whatever i wanna say about it',
-            de: 'was auch immer ich darüber sagen will'
+            en: 'A boy floating through life. He is a little bit lost, but he doesn\'t care. He is simply enjoying the moment and the journey in his cropped yellow sweater.',
+            de: 'Ein Junge, der durch das Leben schwebt. Er ist ein bisschen verloren, aber es ist ihm egal. Er geniesst einfach den Moment und die Reise in seinem kurzen, gelben Pullover.'
         },
         details: {
             en: {
-                size: 'whatever',
-                medium: 'whatever',
-                special:'whatever',
-                price: 'lotsofmoney'
+                size: '21cm x 29.7cm',
+                medium: 'Oil on paper',
+                price: '100 CHF'
             },
             de: {
-                size: 'was auch immer',
-                medium: 'was auch immer',
-                special:'was auch immer',
-                price: 'viel Geld'
+                size: '21cm x 29.7cm',
+                medium: 'Öl auf Papier',
+                price: '100 CHF'
             }
         },
     },
@@ -63,22 +66,22 @@ export const artData = [
         },
         pictures: [
             [
-                image1,
+                donewaiting1,
                 {en: 'alttext',
                 de: 'alternativtext'}
             ],
             [
-                image2,
+                donewaiting2,
                 {en: 'alttext',
                 de: 'alternativtext'}
             ],
             [
-                image3,
+                donewaiting3,
                 {en: 'alttext',
                 de: 'alternativtext'}
             ],
             [
-                image4,
+                donewaiting4,
                 {en: 'alttext',
                 de: 'alternativtext'}
             ],

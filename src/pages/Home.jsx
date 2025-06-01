@@ -9,17 +9,13 @@ function Home () {
 
     return (
         <>
-            {/* <div className={classes.intro}>
-                <h1>
-                    ArtFlo
-                </h1>
-            </div> */}
             <div className={classes.artContainer}>
             {artData.map((piece, index) => {
                 return (
                     <ArtPiece 
                     piece={piece}
-                    key={`artpiece_${index}`}/>
+                    key={`artpiece_${index}`}
+                    index={index}/>
                 )
             })}
             </div>

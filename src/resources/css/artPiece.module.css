@@ -1,7 +1,7 @@
 /* Only the art plus buttons */
 
 .artPiece {
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 
 .artPiece:first-child {
@@ -9,18 +9,25 @@
 }
 
 .artPiece:last-child {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 .art {
     width: 51vw;
     height: 34vw;
-    margin: 2rem auto 0 auto;
+    margin: 1rem auto 0 auto;
     position: relative;
 }
 
 .artPiece h2 {
-    font-size: 1.5rem;;
+    font-family:'Julius Sans One', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.5rem;
+    font-weight:  600;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.2rem 1rem;
+    background-color: var(--bg-color);
 }
 
 .picture, 
@@ -79,7 +86,7 @@
 
 .indicators {
     position: absolute;
-    bottom: 0;
+    bottom: 1%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -106,11 +113,6 @@
 .indicatorActive {
     opacity: 0.9;
 }
-/* other infos */
-
-h2 {
-    text-align: center;
-}
 
 /* art info slide */
 .info {
@@ -120,18 +122,29 @@ h2 {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
 }
 
 .notForSale {
     justify-content: space-around !important;
 }
 
+.textContainer {
+    height: 30%;
+    width: 100%;
+    position: relative;
+}
+
 .text {
-    height: calc(35% - 2rem);
-    width: calc(100% - 2rem);
-    background-color: rgba(204, 186, 184, 0.5);
-    border-radius: 2% / 10%;
-    padding: 1rem;
+    width: calc(90% - 1rem);
+    height: calc(80% - 1rem);
+    background-color: var(--bg-color);
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    padding: 0.5rem;
+    line-height: 1.2rem;
 }
 
 .data {
@@ -142,33 +155,173 @@ h2 {
 }
 
 .dataBit {
-    width: calc(30% - 2rem);
-    background-color: rgba(212, 144, 126, 0.5);
-    border-radius: 5%;
-    padding: 1rem;
+    width: 30%;
+    height: 100%;
+    position: relative;
+    line-height: 1.2rem;
 }
 
-.dataBit:nth-child(2),
-.dataBit:nth-child(3) {
-    border-left: none;
+.dataBitText {
+    width: calc(80% - 1rem);
+    height: calc(80% - 1rem);
+    background-color: var(--bg-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem;
 }
 
 .dataBitTitle {
     margin-bottom: 0.5rem;
     display: block;
+    font-weight: 600;
+}
+
+.offerContainer {
+    height: 20%;
+    width: 100%;
+    position: relative;
 }
 
 .offer {
-    height: 10%;
-    width: 100%;
-    background-color: rgba(135, 161, 197, 0.5);
+    width: 90%;
+    height: 80%;
     color: var(--text-color);
-    border-radius: 1% / 10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-color);
 }
 
 .offer:hover {
-    background-color: rgba(135, 161, 197, 0.7);
-    font-weight: 500;
+    font-size: 1.1rem;
     cursor: pointer;
-    box-shadow: inset 0 0 5px rgba(5, 8, 10, 0.1);
+    width: 92%;
+    height: 82%;
+}
+
+/* decoration */
+
+.deco {
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: calc((100vw - 51vw) / 2 * -1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: -1;
+}
+
+.bannerLeft,
+.bannerRight {
+    width: calc((100vw - 51vw) / 2 - 0.7rem);
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.banner {
+    height: 15%;
+    width: 100%;
+}
+
+.light {
+    background-color: var(--light-accent);
+}
+
+.medium {
+    background-color: var(--main-accent);
+}
+
+.dark {
+    background-color: var(--dark-accent);
+}
+
+.headingDeco {
+    position: relative;
+    height: 2.4rem;
+    width: 100%;
+    z-index: -1;
+    top: 2rem;
+}
+
+.headingBanner {
+    width: 100%;
+    height: 45%;
+}
+
+.backgroundBanner {
+    width: 100%;
+    height: 10%;
+    background-color: var(--bg-color);
+}
+
+.dataBitDeco {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.bigBanner {
+    width: 100%;
+    height: 48%;
+    background-color: rgba(212, 144, 126, 0.5);
+}
+
+.smallBanner {
+    width: 100%;
+    height: 4%;
+    background-color: var(--bg-color);
+}
+
+.decoField {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.bigBannerLight {
+    width: 100%;
+    height: 45%;
+    background-color: rgba(204, 186, 184, 0.5);
+}
+
+.smallBannerLight {
+    width: 100%;
+    height: 10%;
+    background-color: var(--bg-color);
+}
+
+.offerDecoField {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bigBannerDark {
+    width: 100%;
+    height: 45%;
+    background-color: rgba(135, 161, 197, 0.5);
+}
+
+.smallBannerDark {
+    width: 100%;
+    height: 10%;
+    background-color: var(--bg-color);
 }
