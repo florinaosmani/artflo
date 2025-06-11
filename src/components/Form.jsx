@@ -20,7 +20,7 @@ function Form ({ onClose, showForm }) {
             </h3>
             <form
             name='contactArt'
-            method='POST'>
+            method='post'>
                 <input
                 type='hidden'
                 name='form-name'
