@@ -188,7 +188,8 @@ function ArtPiece ( {piece, index} ) {
                     </div>
                     <Form 
                     onClose={handleCloseForm}
-                    showForm={showForm}/>
+                    showForm={showForm}
+                    formName={piece}/>
                     <div className={slide === piece.pictures.length ? `${classes.indicators} ${classes.indicatorsDark}` : classes.indicators}>
                         {piece.pictures.map((picture, index) => {
                             return (

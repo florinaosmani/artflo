@@ -13,7 +13,7 @@ import donewaiting4 from '../resources/images/donewaiting/donewaiting4.jpg';
 export const artData = [
     {
         forSale: true,
-        className: 'hey',
+        className: 'heyboy',
         title: {
             en: 'Boy in Cropped Yellow Sweater',
             de: 'Junge im kurzen, gelben Pullover'
@@ -58,8 +58,8 @@ export const artData = [
         },
     },
     {
-        forSale: false,
-        className: 'hey',
+        forSale: true,
+        className: 'heyother',
         title: {
             en: 'Title of the Art Piece',
             de: 'Titel des Kunstwerks'
