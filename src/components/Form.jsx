@@ -34,6 +34,12 @@ function Form ({ onClose, showForm, error, submit, setSubmit, setError }) {
         event.preventDefault();
     }
 
+    /* annoying new line with enter in the textarea ugh */
+    const handleKeyDown = event => {
+        if (event.keyCode == 13) {
+            event.preventDefault();
+        }
+    }
 
     if (error) {
         return (
@@ -103,7 +109,8 @@ function Form ({ onClose, showForm, error, submit, setSubmit, setError }) {
                         id='message'
                         value={message}
                         maxLength='2000'
-                        onChange={e => setMessage(e.target.value)}>
+                        onChange={e => setMessage(e.target.value)}
+                        onKeyDown={handleKeyDown}>
                         </textarea>
                     </div>
                     <button type='submit'>
