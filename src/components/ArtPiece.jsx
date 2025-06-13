@@ -21,7 +21,9 @@ function ArtPiece ( {piece, index} ) {
         setSlide(newSlide);
     }
 
-    const [showForm, setShowForm] = useState(false);
+    const [showForm, setShowForm] = useState(false); 
+    const [submit, setSubmit] = useState(false);
+    const [error, setError] = useState(false);
 
     const handleShowForm = () => {
         setShowForm(true);
@@ -29,6 +31,8 @@ function ArtPiece ( {piece, index} ) {
 
     const handleCloseForm = () => {
         setShowForm(false);
+        setSubmit(false);
+        setError(false);
     }
 
     const backgroundColors = [
@@ -189,7 +193,11 @@ function ArtPiece ( {piece, index} ) {
                     <Form 
                     onClose={handleCloseForm}
                     showForm={showForm}
-                    formName={piece}/>
+                    formName={piece}
+                    setSubmit={setSubmit}
+                    setError={setError}
+                    error={error}
+                    submit={submit}/>
                     <div className={slide === piece.pictures.length ? `${classes.indicators} ${classes.indicatorsDark}` : classes.indicators}>
                         {piece.pictures.map((picture, index) => {
                             return (
