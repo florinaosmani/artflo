@@ -5,59 +5,114 @@ import { useContext, useState } from 'react';
 
 function Form ({ onClose, showForm }) {
     const lang = useContext(LanguageContext);
+    /* form data  & submit state for displaying either form or thanks page*/
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [submit, setSubmit] = useState(false);
+    
+    /* encode and handlesubmit according to netlify forms documentation */
 
-    return (
-        <div className={showForm ? classes.form : `${classes.form} ${classes.hidden}`}>	
-            <button 
-            className={classes.closeButton}
-            onClick={onClose}>
-                <i className="fa-solid fa-xmark"></i>
-            </button>
-            <h3>
-                {lang? 'Buy this painting' : 'Kaufe dieses Gemälde'}
-            </h3>
-            <form
-            name='contactArt'
-            method='post'>
-                <input
-                type='hidden'
-                name='form-name'
-                value='contactArt' />
-                <div>
-                    <label htmlFor="name">
-                        Name:
-                    </label>
-                    <input
-                    type='text'
-                    id='name'
-                    name='name'
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                    placeholder = {lang? 'Your name' : 'Dein Name'}
-                    required />
-                </div>
-                <div>
-                    <label htmlFor='email'>
-                        {lang? 'Email:' : 'E-Mail:'}
-                    </label>
-                    <input
-                    type='email'
-                    id='email'
-                    name='email'
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                    placeholder = {lang? 'Your email' : 'Deine E-Mail'}
-                    required
-                    />
-                </div>
-                <button type='submit'>
-                    {lang? 'Send Message': 'Nachricht senden'}
+    const encode = (data) => {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&");
+    }
+
+    const handleSubmit = event => {
+        fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({
+                'form-name': 'contactArt',
+                'name': name,
+                'email' : email,
+                'message': message
+            })
+        }).then(() => alert('Success!'))
+        .catch(error => alert(error));
+
+        event.preventDefault();
+    }
+
+    if (!submit) {
+        return (
+            <div className={showForm ? classes.form : `${classes.form} ${classes.hidden}`}>	
+                <button 
+                className={classes.closeButton}
+                onClick={onClose}>
+                    <i className="fa-solid fa-xmark"></i>
                 </button>
-            </form>
-        </div>
-    )
+                <h3>
+                    {lang? 'Buy this painting' : 'Kaufe dieses Gemälde'}
+                </h3>
+                <form
+                name='contactArt'
+                method='post'
+                onSubmit={handleSubmit}>
+                    <input
+                    type='hidden'
+                    name='form-name'
+                    value='contactArt' />
+                    <div>
+                        <label htmlFor="name">
+                            Name:
+                        </label>
+                        <input
+                        type='text'
+                        id='name'
+                        name='name'
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                        placeholder = {lang? 'Your name' : 'Dein Name'}
+                        required />
+                    </div>
+                    <div>
+                        <label htmlFor='email'>
+                            {lang? 'Email:' : 'E-Mail:'}
+                        </label>
+                        <input
+                        type='email'
+                        id='email'
+                        name='email'
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        placeholder = {lang? 'Your email' : 'Deine E-Mail'}
+                        required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor='message'>
+                            {lang ? 'Message:' : 'Nachricht:x'}
+                        </label>
+                        <textarea
+                        name='message'
+                        id='message'
+                        value={message}
+                        maxLength='2000'
+                        onChange={e => setMessage(e.target.value)}>
+                        </textarea>
+                    </div>
+                    <button type='submit'>
+                        {lang? 'Send Message': 'Nachricht senden'}
+                    </button>
+                </form>
+            </div>
+        )
+    } else {
+        return (
+            <div className={showForm ? classes.form : `${classes.form} ${classes.hidden}`}>
+                <button 
+                className={classes.closeButton}
+                onClick={onClose}>
+                    <i className="fa-solid fa-xmark"></i>
+                </button>
+                <p>Thank you for your message!
+                    <br/> I will get back to you shortly!
+                </p>
+            </div>
+        )
+    }
 }
 
 export default Form;
